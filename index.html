@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Kebutuhan Hosting</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0a0a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hologram-title {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: hologramEffect 8s ease infinite;
+            text-shadow: 0 0 10px rgba(255,255,255,0.3);
+            margin-bottom: 20px;
+        }
+        
+        @keyframes hologramEffect {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .product-section {
+            background: rgba(10, 10, 30, 0.7);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(0, 255, 255, 0) 0%,
+                rgba(0, 255, 255, 0.1) 50%,
+                rgba(0, 255, 255, 0) 100%
+            );
+            transform: rotate(30deg);
+            animation: hologramScan 6s linear infinite;
+        }
+        
+        @keyframes hologramScan {
+            0% {transform: translateY(-100%) rotate(30deg);}
+            100% {transform: translateY(100%) rotate(30deg);}
+        }
+        
+        .product-title {
+            font-size: 1.8rem;
+            color: #00ffff;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .product-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(20, 20, 50, 0.5);
+            border-radius: 10px;
+            border-left: 3px solid #00ffff;
+            position: relative;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: #ffff00;
+        }
+        
+        .payment-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 100, 100, 0.3);
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px 5px;
+            background: linear-gradient(45deg, #00ffff, #0088ff);
+            color: #000;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+        }
+        
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 255, 255, 0.6);
+        }
+        
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .color-changer {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .color-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .color-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .upload-section {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(30, 30, 60, 0.7);
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .upload-btn {
+            background: linear-gradient(45deg, #ff00ff, #ff0088);
+        }
+        
+        .upload-btn:hover {
+            box-shadow: 0 8px 20px rgba(255, 0, 255, 0.6);
+        }
+        
+        .contact-link {
+            color: #00ffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="hologram-title">ALL KEBUTUHAN HOSTING</h1>
+    </div>
+    
+    <div class="color-changer">
+        <h3>Ubah Warna Hologram:</h3>
+        <div>
+            <button class="color-btn" style="background: linear-gradient(45deg, #ff00ff, #00ffff);" onclick="changeHologramColor('cyan-magenta')"></button>
+            <button class="color-btn" style="background: linear-gradient(45deg, #00ff00, #0000ff);" onclick="changeHologramColor('green-blue')"></button>
+            <button class="color-btn" style="background: linear-gradient(45deg, #ffff00, #ff0000);" onclick="changeHologramColor('yellow-red')"></button>
+            <button class="color-btn" style="background: linear-gradient(45deg, #ffffff, #888888);" onclick="changeHologramColor('white-gray')"></button>
+            <button class="color-btn" style="background: linear-gradient(45deg, #ff9900, #9900ff);" onclick="changeHologramColor('orange-purple')"></button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="product-section">
+            <h2 class="product-title">ALGOJO INVISIBLE</h2>
+            <div class="product-item">
+                <span class="price">15K NO UP</span>
+            </div>
+            <div class="product-item">
+                <span class="price">20K FREE UP</span>
+            </div>
+            <div class="product-item">
+                <span class="price">RESS SC ALGOJO INVISIBLE 25K</span>
+            </div>
+            <div class="product-item">
+                <span class="price">PT SC ALGOJO INVISIBLE 30K</span>
+            </div>
+            
+            <div class="payment-info">
+                <p>KONFIRMASI PEMBAYARAN</p>
+                <p>NOMER DANA : 089512593943</p>
+                <p>PENCET TOMBOL YANG ANDA BUTUHKAN TERUS PILIH METODE PEMBAYARAN JIKA SUDAH SS FOTO BUKTI TRANSFER JIKA SUDAH KIRIM BUKTI SS TERUS PENCET UPLOAD FOTO BUKTI TRANSFER ANDA DAN MASUKAN NAMA ANDA CHAT KONTAK ADMIN YANG TERSEDIA</p>
+            </div>
+            
+            <div class="button-group">
+                <button class="button" onclick="selectProduct('ALGOJO INVISIBLE 15K NO UP')">15K NO UP</button>
+                <button class="button" onclick="selectProduct('ALGOJO INVISIBLE 20K FREE UP')">20K FREE UP</button>
+                <button class="button" onclick="selectProduct('RESS SC ALGOJO INVISIBLE 25K')">RESS SC 25K</button>
+                <button class="button" onclick="selectProduct('PT SC ALGOJO INVISIBLE 30K')">PT SC 30K</button>
+            </div>
+        </div>
+        
+        <div class="product-section">
+            <h2 class="product-title">ULTIMATE KIZARU</h2>
+            <div class="product-item">
+                <span class="price">20K NO UP</span>
+            </div>
+            <div class="product-item">
+                <span class="price">25K FREE UP</span>
+            </div>
+            <div class="product-item">
+                <span class="price">RESS SC ULTIMATE KIZARU 30K</span>
+            </div>
+            <div class="product-item">
+                <span class="price">PT SC ULTIMATE KIZARU 35K</span>
+            </div>
+            
+            <div class="payment-info">
+                <p>KONFIRMASI PEMBAYARAN</p>
+                <p>NOMER DANA : 089512593943</p>
+                <p>PENCET TOMBOL YANG ANDA BUTUHKAN TERUS PILIH METODE PEMBAYARAN JIKA SUDAH SS FOTO BUKTI TRANSFER JIKA SUDAH KIRIM BUKTI SS TERUS PENCET UPLOAD FOTO BUKTI TRANSFER ANDA DAN MASUKAN NAMA ANDA CHAT KONTAK ADMIN YANG TERSEDIA</p>
+            </div>
+            
+            <div class="button-group">
+                <button class="button" onclick="selectProduct('ULTIMATE KIZARU 20K NO UP')">20K NO UP</button>
+                <button class="button" onclick="selectProduct('ULTIMATE KIZARU 25K FREE UP')">25K FREE UP</button>
+                <button class="button" onclick="selectProduct('RESS SC ULTIMATE KIZARU 30K')">RESS SC 30K</button>
+                <button class="button" onclick="selectProduct('PT SC ULTIMATE KIZARU 35K')">PT SC 35K</button>
+            </div>
+        </div>
+        
+        <div class="product-section">
+            <h2 class="product-title">LIST SCRIPT KEBUTUHAN JB</h2>
+            <div class="product-item">
+                <span class="price">PUSHKONTAK ANTI KENON 10K</span>
+            </div>
+            <div class="product-item">
+                <span class="price">PUSHKONTAK CH 15K</span>
+            </div>
+            <div class="product-item">
+                <span class="price">SC JAGA GRUB 8K</span>
+            </div>
+            
+            <div class="payment-info">
+                <p>KONFIRMASI PEMBAYARAN</p>
+                <p>NOMER DANA : 089512593943</p>
+                <p>PENCET TOMBOL YANG ANDA BUTUHKAN TERUS PILIH METODE PEMBAYARAN JIKA SUDAH SS FOTO BUKTI TRANSFER JIKA SUDAH KIRIM BUKTI SS TERUS PENCET UPLOAD FOTO BUKTI TRANSFER ANDA DAN MASUKAN NAMA ANDA CHAT KONTAK ADMIN YANG TERSEDIA</p>
+            </div>
+            
+            <div class="button-group">
+                <button class="button" onclick="selectProduct('PUSHKONTAK ANTI KENON 10K')">PUSHKONTAK 10K</button>
+                <button class="button" onclick="selectProduct('PUSHKONTAK CH 15K')">PUSHKONTAK CH 15K</button>
+                <button class="button" onclick="selectProduct('SC JAGA GRUB 8K')">JAGA GRUB 8K</button>
+            </div>
+        </div>
+        
+        <div class="upload-section">
+            <h3>Upload Bukti Transfer</h3>
+            <input type="file" id="proofUpload" style="display: none;">
+            <input type="text" id="customerName" placeholder="Masukan Nama Anda" style="padding: 10px; width: 80%; max-width: 300px; margin: 10px; border-radius: 5px; border: none;">
+            <button class="button upload-btn" onclick="document.getElementById('proofUpload').click()">Pilih File Bukti Transfer</button>
+            <button class="button" onclick="uploadProof()">Upload Bukti Transfer</button>
+            <p>Setelah upload, hubungi admin di: <a href="https://t.me/xtrtapz" class="contact-link" target="_blank">https://t.me/xtrtapz</a></p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2023 All Kebutuhan Hosting | Contact Admin: <a href="https://t.me/xtrtapz" class="contact-link" target="_blank">Telegram</a></p>
+    </div>
+    
+    <script>
+        // Fungsi untuk mengubah warna hologram
+        function changeHologramColor(colorScheme) {
+            const productSections = document.querySelectorAll('.product-section');
+            const title = document.querySelector('.hologram-title');
+            
+            switch(colorScheme) {
+                case 'cyan-magenta':
+                    title.style.background = 'linear-gradient(90deg, #ff00ff, #00ffff, #ffff00, #ff00ff)';
+                    productSections.forEach(section => {
+                        section.style.boxShadow = '0 0 20px rgba(0, 255, 255, 0.2)';
+                        section.style.border = '1px solid rgba(0, 255, 255, 0.1)';
+                    });
+                    break;
+                case 'green-blue':
+                    title.style.background = 'linear-gradient(90deg, #00ff00, #0000ff, #00ffff, #00ff00)';
+                    productSections.forEach(section => {
+                        section.style.boxShadow = '0 0 20px rgba(0, 255, 0, 0.2)';
+                        section.style.border = '1px solid rgba(0, 255, 0, 0.1)';
+                    });
+                    break;
+                case 'yellow-red':
+                    title.style.background = 'linear-gradient(90deg, #ffff00, #ff0000, #ff9900, #ffff00)';
+                    productSections.forEach(section => {
+                        section.style.boxShadow = '0 0 20px rgba(255, 255, 0, 0.2)';
+                        section.style.border = '1px solid rgba(255, 255, 0, 0.1)';
+                    });
+                    break;
+                case 'white-gray':
+                    title.style.background = 'linear-gradient(90deg, #ffffff, #888888, #cccccc, #ffffff)';
+                    productSections.forEach(section => {
+                        section.style.boxShadow = '0 0 20px rgba(255, 255, 255, 0.2)';
+                        section.style.border = '1px solid rgba(255, 255, 255, 0.1)';
+                    });
+                    break;
+                case 'orange-purple':
+                    title.style.background = 'linear-gradient(90deg, #ff9900, #9900ff, #ff00ff, #ff9900)';
+                    productSections.forEach(section => {
+                        section.style.boxShadow = '0 0 20px rgba(255, 153, 0, 0.2)';
+                        section.style.border = '1px solid rgba(255, 153, 0, 0.1)';
+                    });
+                    break;
+            }
+        }
+        
+        // Fungsi untuk memilih produk
+        function selectProduct(product) {
+            alert('Anda memilih: ' + product + '\n\nSilahkan lakukan pembayaran ke:\nDANA: 089512593943\n\nSetelah transfer, upload bukti pembayaran di form bawah.');
+        }
+        
+        // Fungsi untuk upload bukti transfer
+        function uploadProof() {
+            const fileInput = document.getElementById('proofUpload');
+            const nameInput = document.getElementById('customerName');
+            
+            if (!fileInput.files.length) {
+                alert('Silahkan pilih file bukti transfer terlebih dahulu.');
+                return;
+            }
+            
+            if (!nameInput.value.trim()) {
+                alert('Silahkan masukan nama Anda.');
+                return;
+            }
+            
+            // Dalam implementasi nyata, ini akan mengupload file ke server
+            // Di sini kita hanya simulasi
+            alert('Bukti transfer dari ' + nameInput.value + ' berhasil diupload!\n\nSilahkan hubungi admin di https://t.me/xtrtapz untuk konfirmasi.');
+            
+            // Reset form
+            fileInput.value = '';
+            nameInput.value = '';
+        }
+    </script>
+</body>
+</html>
